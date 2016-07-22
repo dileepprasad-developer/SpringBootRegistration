@@ -3,6 +3,9 @@ My First Spring Boot Application
 This Application Registers the user and keep the details in Redis cache
 Redis cache will keep the data in json format
 
+Application is written with spring boot .
+To start the application just run the jar created during the build.
+
 
 
 1) GET example - http://localhost:9000/registration/user/18
