@@ -11,7 +11,7 @@ public class RedisCacheServiceImpl implements CacheService {
     private RedisRepository cacheutil ;
     
     @Override
-    public User getUser(String userid){
+    public User getUser(Integer userid){
         User userFromCache = cacheutil.getValue(userid);
         return userFromCache;
     }
@@ -31,11 +31,11 @@ public class RedisCacheServiceImpl implements CacheService {
          return status ;   
     }
     @Override
-    public Status deleteUser(String userid) {
+    public Status deleteUser(Integer userid) {
         Status status = new Status();
         status.responsecode = "" + HttpStatus.INTERNAL_SERVER_ERROR.value();
         status.responsemessage = HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase();
-        cacheutil.delete(userid);
+        cacheutil.delete(""+userid);
         status.responsecode = "" + HttpStatus.OK.value();
         status.responsemessage = HttpStatus.OK.getReasonPhrase();
 

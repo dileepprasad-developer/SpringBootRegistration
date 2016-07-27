@@ -6,7 +6,7 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd 
         http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd">
 	<context:property-placeholder location="classpath:/redis.properties" />
-	<context:component-scan base-package="com.comcast" />
+	<context:component-scan base-package="com.dileep" />
 	<bean id="jedisConnectionFactory"
 		class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"
 		p:host-name="${redis.host}" p:port="${redis.port}" p:use-pool="true" />
@@ -28,4 +28,7 @@
 			</bean>
 		</property>
 	</bean>
+	 <bean id = "cacheutil" class="com.dileep.registration.cache.RedisRepository"/> 
+      <bean id ="cacheimpl" class= "com.dileep.registration.cache.impl.RedisCacheServiceImpl"/>
+	
 </beans>

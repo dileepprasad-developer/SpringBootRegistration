@@ -9,6 +9,4 @@
         http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd" >
    
 		<import resource="cache-config.xml" />
-      <bean id = "cacheutil" class="com.dileep.registration.cache.RedisRepository"/> 
-      <bean id ="cacheimpl" class= "com.dileep.registration.cache.impl.RedisCacheServiceImpl"/>
-</beans>
+      </beans>

@@ -23,7 +23,7 @@ public class RegistrationController {
 
 
     @RequestMapping( method = RequestMethod.GET , value="/{userid}" )
-    public RegistrationResponse getUser(@PathVariable String userid){
+    public RegistrationResponse getUser(@PathVariable Integer userid){
         RegistrationResponse response = new RegistrationResponse();
         Status status =  new Status();
         try {
@@ -46,7 +46,6 @@ public class RegistrationController {
     }
     
     @RequestMapping( method = RequestMethod.POST )
-    @Cacheable( value="user")
     public RegistrationResponse createUser( @RequestBody User user){
         RegistrationResponse response =  new RegistrationResponse();
         Status status ;
@@ -64,7 +63,7 @@ public class RegistrationController {
     
    
     @RequestMapping( method = RequestMethod.DELETE , value="/{userid}" )
-    public RegistrationResponse removeUser(@PathVariable String userid){
+    public RegistrationResponse removeUser(@PathVariable Integer userid){
      
         RegistrationResponse response =  new RegistrationResponse();
         Status status ;
